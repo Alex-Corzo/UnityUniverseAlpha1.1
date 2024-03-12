@@ -1,0 +1,176 @@
+[gd_scene load_steps=13 format=3 uid="uid://2oeli81oxtw5"]
+
+[ext_resource type="Texture2D" uid="uid://dqar1q7gtsu25" path="res://Entorno/image 27.png" id="1_nqoy0"]
+[ext_resource type="Script" path="res://scripts_project/partidas.gd" id="1_ujr4a"]
+[ext_resource type="Texture2D" uid="uid://c1ulil7rq2cq4" path="res://Sprites/Hoja.png" id="2_px3dp"]
+[ext_resource type="Texture2D" uid="uid://dmwifkqhr7oms" path="res://Sprites/Rectangle 22.png" id="3_6r7on"]
+[ext_resource type="FontFile" uid="uid://6ffv7le4xvds" path="res://fonts/freecam v2.ttf" id="4_8gdxa"]
+[ext_resource type="Texture2D" uid="uid://bl6k8c0ix0mpw" path="res://icons/pngegg.png" id="6_pbm4e"]
+[ext_resource type="Texture2D" uid="uid://cr3chm0sw3cti" path="res://icons/Gameboy.png" id="6_yk2of"]
+[ext_resource type="Texture2D" uid="uid://b5douvws6pj26" path="res://backgrounds/rect_partidas.png" id="7_byetw"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="8_k4ruq"]
+[ext_resource type="Texture2D" uid="uid://dsm0ffevvghsq" path="res://icons/pixil-frame-0.png" id="9_f77uo"]
+[ext_resource type="Texture2D" uid="uid://bsctnfvclykrj" path="res://Sprites/Manita2.png" id="11_1yejy"]
+[ext_resource type="Texture2D" uid="uid://ddniyfen3ngan" path="res://Sprites/Manita1.png" id="12_xxrki"]
+
+[node name="menu_Partidas" type="Node"]
+script = ExtResource("1_ujr4a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nqoy0")
+expand_mode = 1
+
+[node name="Hoja" type="Sprite2D" parent="."]
+position = Vector2(1001.84, 519.304)
+scale = Vector2(0.237316, 0.237315)
+texture = ExtResource("2_px3dp")
+
+[node name="Hoja2" type="Sprite2D" parent="."]
+position = Vector2(199, 512)
+scale = Vector2(0.23524, 0.23524)
+texture = ExtResource("2_px3dp")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 357.0
+offset_top = 52.1
+offset_right = 786.0
+offset_bottom = 124.1
+texture = ExtResource("3_6r7on")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.101
+anchor_right = 0.5
+anchor_bottom = 0.101
+offset_left = -142.0
+offset_top = 3.652
+offset_right = 132.0
+offset_bottom = 43.652
+theme_override_colors/font_color = Color(0.827451, 0.890196, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_8gdxa")
+theme_override_font_sizes/font_size = 34
+text = "Partidas"
+
+[node name="Game" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(320, 87)
+scale = Vector2(1.97285, 1.97285)
+texture = ExtResource("6_yk2of")
+
+[node name="mando" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(860, 88.1)
+scale = Vector2(0.0760714, 0.0751786)
+texture = ExtResource("6_pbm4e")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 266.0
+offset_top = 170.1
+offset_right = 891.0
+offset_bottom = 411.1
+texture = ExtResource("7_byetw")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.534
+anchor_top = 0.607
+anchor_right = 0.534
+anchor_bottom = 0.607
+offset_left = -295.168
+offset_top = -174.336
+offset_right = 197.832
+offset_bottom = -36.336
+theme_override_constants/separation = 42
+alignment = 1
+
+[node name="Continuar Partida" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 17.99
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_k4ruq")
+theme_override_font_sizes/font_size = 35
+action_mode = 0
+text = "Continuar partida"
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+
+[node name="NuevaPartida" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_k4ruq")
+theme_override_font_sizes/font_size = 35
+text = "Nueva partida"
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = 0.044
+anchor_right = 0.06
+anchor_bottom = 0.108
+offset_left = 316.808
+offset_top = 340.588
+offset_right = 598.88
+offset_bottom = 463.116
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(572, 442)
+scale = Vector2(4.89063, 4.89063)
+texture = ExtResource("9_f77uo")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 507.0
+offset_top = 446.0
+offset_right = 642.0
+offset_bottom = 493.0
+flat = true
+
+[node name="Manitacont" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(302, 246)
+scale = Vector2(0.0464286, 0.049712)
+texture = ExtResource("11_1yejy")
+
+[node name="Manitanuv" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(348, 329)
+scale = Vector2(0.0607142, 0.0607142)
+texture = ExtResource("11_1yejy")
+
+[node name="Manitacont1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(833, 247)
+scale = Vector2(0.0491825, 0.0491825)
+texture = ExtResource("12_xxrki")
+
+[node name="Manitanuv1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(790, 330)
+scale = Vector2(0.0586762, 0.0586762)
+texture = ExtResource("12_xxrki")
+
+[connection signal="mouse_entered" from="VBoxContainer/Continuar Partida" to="." method="_on_continuar_partida_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Continuar Partida" to="." method="_on_continuar_partida_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/NuevaPartida" to="." method="_on_nueva_partida_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/NuevaPartida" to="." method="_on_nueva_partida_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/NuevaPartida" to="." method="_on_nueva_partida_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

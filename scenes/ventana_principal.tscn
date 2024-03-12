@@ -1,0 +1,306 @@
+[gd_scene load_steps=23 format=3 uid="uid://3ln0xh2nf1ty"]
+
+[ext_resource type="Script" path="res://scripts_project/ventana_principal.gd" id="1_0gwul"]
+[ext_resource type="Texture2D" uid="uid://bc870554ua7r8" path="res://icons/google.png" id="1_jcjao"]
+[ext_resource type="Texture2D" uid="uid://edwypwcli46n" path="res://icons/edfunnygames.png" id="2_hu257"]
+[ext_resource type="Texture2D" uid="uid://dj00y6yo7i8ke" path="res://backgrounds/fondo1.jpg" id="2_v02rr"]
+[ext_resource type="Texture2D" uid="uid://clctsmkkku6w7" path="res://icons/epic_games.png" id="3_n54k2"]
+[ext_resource type="Texture2D" uid="uid://bdrbv1fjpmlfj" path="res://backgrounds/white-container.png" id="3_yuexm"]
+[ext_resource type="Texture2D" uid="uid://b7f7jmdtge5yt" path="res://icons/steam.png" id="4_3jtpi"]
+[ext_resource type="FontFile" uid="uid://ddd35rpo0mt8e" path="res://fonts/EkMukta-Regular.ttf" id="5_im21t"]
+[ext_resource type="Texture2D" uid="uid://dgg6vmas2tky5" path="res://icons/gog_galaxy.png" id="5_k268p"]
+[ext_resource type="Texture2D" uid="uid://bhrc1t8xl44ri" path="res://icons/correo.png" id="6_efty1"]
+
+[sub_resource type="SystemFont" id="SystemFont_bbymw"]
+
+[sub_resource type="Theme" id="Theme_4j08k"]
+
+[sub_resource type="Theme" id="Theme_k5t17"]
+default_font_size = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nodhv"]
+bg_color = Color(0.901961, 0.921569, 0.929412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h277"]
+bg_color = Color(0.901961, 0.921569, 0.929412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hgyq"]
+bg_color = Color(0.901961, 0.921569, 0.929412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkf52"]
+bg_color = Color(0.901961, 0.921569, 0.929412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82ox0"]
+bg_color = Color(0.901961, 0.921569, 0.929412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w7qd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psdn7"]
+bg_color = Color(0.662745, 0.52549, 0.772549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fsdd"]
+bg_color = Color(0.552941, 0.403922, 0.666667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnubw"]
+bg_color = Color(0.396078, 0.207843, 0.482353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="VentanaPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0gwul")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v02rr")
+
+[node name="logoEdFunny" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = 340.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_hu257")
+expand_mode = 1
+
+[node name="containerBackground" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -293.0
+offset_right = 340.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yuexm")
+
+[node name="iniciarSesionLabel" type="Label" parent="containerBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = -267.5
+offset_right = 266.5
+offset_bottom = -215.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_bbymw")
+theme_override_font_sizes/font_size = 35
+text = "Iniciar Sesión"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="containerBackground"]
+light_mask = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.5
+offset_top = -205.5
+offset_right = 278.5
+offset_bottom = 194.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4j08k")
+theme_override_constants/separation = 21
+
+[node name="googleLoginButtton" type="Button" parent="containerBackground/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_k5t17")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 12
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_nodhv")
+text = "Iniciar Sesión con google"
+icon = ExtResource("1_jcjao")
+alignment = 0
+expand_icon = true
+
+[node name="epicLoginButton" type="Button" parent="containerBackground/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = -147
+theme_override_constants/h_separation = 12
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7h277")
+text = "Iniciar Sesión con Epic Games"
+icon = ExtResource("3_n54k2")
+alignment = 0
+expand_icon = true
+
+[node name="steamLoginButton" type="Button" parent="containerBackground/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hgyq")
+text = "Iniciar Sesión con Steam"
+icon = ExtResource("4_3jtpi")
+alignment = 0
+expand_icon = true
+
+[node name="gogGLoginButton" type="Button" parent="containerBackground/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_kkf52")
+text = "Iniciar Sesión con GOG Galaxy"
+icon = ExtResource("5_k268p")
+alignment = 0
+expand_icon = true
+
+[node name="emailLoginButton" type="Button" parent="containerBackground/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_82ox0")
+text = "Iniciar Sesión con un correo"
+icon = ExtResource("6_efty1")
+alignment = 0
+expand_icon = true
+
+[node name="registroLabel" type="Label" parent="containerBackground"]
+layout_mode = 2
+anchor_left = 0.09
+anchor_top = 0.825
+anchor_right = 0.09
+anchor_bottom = 0.825
+offset_left = -18.65
+offset_top = 34.925
+offset_right = 158.35
+offset_bottom = 74.925
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 22
+text = "¿No tienes cuenta?"
+
+[node name="registroButton" type="Button" parent="containerBackground"]
+clip_contents = true
+layout_mode = 2
+anchor_left = -0.309
+anchor_top = 0.214
+anchor_right = -0.309
+anchor_bottom = 0.214
+offset_left = 431.665
+offset_top = 379.806
+offset_right = 579.665
+offset_bottom = 424.806
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.235294, 0.72549, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.662745, 0.52549, 0.772549, 1)
+theme_override_colors/font_focus_color = Color(0.662745, 0.52549, 0.772549, 1)
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7w7qd")
+text = "Registrate aquí"
+flat = true
+
+[node name="sinCuentaLoginButton" type="Button" parent="containerBackground"]
+clip_contents = true
+layout_mode = 2
+offset_left = 446.0
+offset_top = 503.0
+offset_right = 648.0
+offset_bottom = 541.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_im21t")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_psdn7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fsdd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wnubw")
+text = "Continuar sin cuenta"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="containerBackground/VBoxContainer/googleLoginButtton" to="." method="_on_google_login_buttton_pressed"]
+[connection signal="pressed" from="containerBackground/VBoxContainer/epicLoginButton" to="." method="_on_epic_login_button_pressed"]
+[connection signal="pressed" from="containerBackground/VBoxContainer/steamLoginButton" to="." method="_on_steam_login_button_pressed"]
+[connection signal="pressed" from="containerBackground/VBoxContainer/gogGLoginButton" to="." method="_on_gog_g_login_button_pressed"]
+[connection signal="pressed" from="containerBackground/VBoxContainer/emailLoginButton" to="." method="_on_email_login_button_pressed"]
+[connection signal="pressed" from="containerBackground/registroButton" to="." method="_on_registro_button_pressed"]
+[connection signal="pressed" from="containerBackground/sinCuentaLoginButton" to="." method="_on_sin_cuenta_login_button_pressed"]

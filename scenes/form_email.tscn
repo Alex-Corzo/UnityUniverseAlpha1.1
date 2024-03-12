@@ -1,0 +1,184 @@
+[gd_scene load_steps=13 format=3 uid="uid://cnxkjy1724v0f"]
+
+[ext_resource type="Script" path="res://scripts_project/form_email.gd" id="1_t78np"]
+[ext_resource type="Texture2D" uid="uid://dj00y6yo7i8ke" path="res://backgrounds/fondo1.jpg" id="1_vwbv6"]
+[ext_resource type="Texture2D" uid="uid://edwypwcli46n" path="res://icons/edfunnygames.png" id="2_g7r62"]
+[ext_resource type="Texture2D" uid="uid://bdrbv1fjpmlfj" path="res://backgrounds/white-container.png" id="3_puxo7"]
+[ext_resource type="Texture2D" uid="uid://di3elv7ufou2r" path="res://icons/flecha-atras.png" id="5_lqjmp"]
+
+[sub_resource type="Theme" id="Theme_mmtie"]
+
+[sub_resource type="SystemFont" id="SystemFont_4l4fm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl5jl"]
+content_margin_left = 17.0
+content_margin_top = 13.0
+content_margin_bottom = 13.0
+bg_color = Color(0.482353, 0.568627, 0.694118, 0.886275)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1ooa"]
+content_margin_left = 100.0
+content_margin_top = 6.0
+content_margin_right = 100.0
+content_margin_bottom = 6.0
+bg_color = Color(0.662745, 0.52549, 0.772549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg60t"]
+bg_color = Color(0.552941, 0.403922, 0.666667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfvti"]
+bg_color = Color(0.396078, 0.207843, 0.482353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bbb3h"]
+content_margin_left = 10.0
+content_margin_top = 11.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+
+[node name="FormEmail" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t78np")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vwbv6")
+
+[node name="logoEdFunny" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = 340.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_g7r62")
+expand_mode = 1
+
+[node name="containerBackground" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -243.0
+offset_right = 372.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_puxo7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="containerBackground"]
+light_mask = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -321.5
+offset_top = -182.0
+offset_right = 321.5
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_mmtie")
+theme_override_constants/separation = 21
+
+[node name="tituloLabel" type="Label" parent="containerBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_4l4fm")
+theme_override_font_sizes/font_size = 35
+text = "Ingresa el e-mail que tienes registrado 
+en tu cuenta"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="containerBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 38
+
+[node name="emailInput" type="LineEdit" parent="containerBackground/VBoxContainer"]
+show_behind_parent = true
+clip_contents = true
+layout_mode = 2
+focus_mode = 1
+mouse_force_pass_scroll_events = false
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hl5jl")
+placeholder_text = "E-MAIL"
+draw_control_chars = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="containerBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 38
+
+[node name="okButton" type="Button" parent="containerBackground/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_d1ooa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yg60t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lfvti")
+text = "OK"
+
+[node name="RegresarButton" type="Button" parent="containerBackground"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -104.0
+offset_right = 102.0
+offset_bottom = -31.0
+grow_vertical = 0
+focus_mode = 0
+theme_override_styles/pressed = SubResource("StyleBoxLine_bbb3h")
+toggle_mode = true
+icon = ExtResource("5_lqjmp")
+flat = true
+expand_icon = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="containerBackground/VBoxContainer/okButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="containerBackground/RegresarButton" to="." method="_on_regresar_button_pressed"]

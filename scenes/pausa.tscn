@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnjdyitjrv1xt"]
+
+[ext_resource type="Script" path="res://scripts_project/pausa.gd" id="1_j506y"]
+[ext_resource type="Texture2D" uid="uid://bwsphaeiknw4k" path="res://backgrounds/cont_pause.png" id="1_p366h"]
+[ext_resource type="Texture2D" uid="uid://ds460ucaj50kq" path="res://backgrounds/rec_pause.png" id="2_4iqdk"]
+[ext_resource type="Texture2D" uid="uid://dhsb14v8kgjsf" path="res://Sprites/2730363-game-inkcontober-steal-sword-tools-weapon_112708.png" id="3_xn7uc"]
+[ext_resource type="Texture2D" uid="uid://bqtnedvekflrt" path="res://Sprites/as-de-espadas.png" id="4_5rd3g"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="5_h6nfs"]
+[ext_resource type="FontFile" uid="uid://6ffv7le4xvds" path="res://fonts/freecam v2.ttf" id="6_cew4d"]
+
+[node name="pausemenu" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_j506y")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 174.0
+offset_top = 142.0
+offset_right = 930.0
+offset_bottom = 551.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_p366h")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 189.0
+offset_right = 850.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 53
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_h6nfs")
+theme_override_font_sizes/font_size = 32
+text = "Continuar partida"
+flat = true
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_h6nfs")
+theme_override_font_sizes/font_size = 32
+text = "Guardar partida"
+flat = true
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_h6nfs")
+theme_override_font_sizes/font_size = 32
+text = "Ajustes"
+flat = true
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_h6nfs")
+theme_override_font_sizes/font_size = 32
+text = "Volver al menú principal"
+flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 65.0
+offset_right = 771.0
+offset_bottom = 130.0
+size_flags_horizontal = 4
+texture = ExtResource("2_4iqdk")
+expand_mode = 1
+
+[node name="2730363-game-inkcontober-steal-sword-tools-weapon112708" type="Sprite2D" parent="Control"]
+position = Vector2(808, 96)
+scale = Vector2(0.114502, 0.114502)
+texture = ExtResource("3_xn7uc")
+
+[node name="As-de-espadas" type="Sprite2D" parent="Control"]
+position = Vector2(363, 96)
+scale = Vector2(0.108887, 0.108887)
+texture = ExtResource("4_5rd3g")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 84.0
+offset_right = 766.0
+offset_bottom = 123.0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("6_cew4d")
+theme_override_font_sizes/font_size = 25
+text = "Unity Universe"
+
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://chp2a17pygdas"]
+
+[ext_resource type="Texture2D" uid="uid://sjg5eshyy7pe" path="res://spritesheets/enemigos/tronco/Idle (64x32).png" id="1_wb11f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6xp5"]
+size = Vector2(28, 25)
+
+[sub_resource type="Animation" id="Animation_pm3oe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprTronco:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_kivxq"]
+resource_name = "tronco_idle"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprTronco:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qcxso"]
+_data = {
+"RESET": SubResource("Animation_pm3oe"),
+"tronco_idle": SubResource("Animation_kivxq")
+}
+
+[node name="tronco" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(42, 6.5)
+shape = SubResource("RectangleShape2D_a6xp5")
+
+[node name="sprTronco" type="Sprite2D" parent="."]
+position = Vector2(41, 3)
+texture = ExtResource("1_wb11f")
+hframes = 18
+frame = 1
+
+[node name="anim_tronco" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qcxso")
+}

@@ -1,0 +1,245 @@
+[gd_scene load_steps=13 format=3 uid="uid://bnv5um3lysld1"]
+
+[ext_resource type="Script" path="res://scripts_project/miperfil.gd" id="1_14g00"]
+[ext_resource type="Texture2D" uid="uid://dyq0h0pxji0ws" path="res://Entorno/fnd_personalz.png" id="1_k1xri"]
+[ext_resource type="FontFile" uid="uid://6ffv7le4xvds" path="res://fonts/freecam v2.ttf" id="4_m38s8"]
+[ext_resource type="Texture2D" uid="uid://dmwifkqhr7oms" path="res://Sprites/Rectangle 22.png" id="4_ofqta"]
+[ext_resource type="Texture2D" uid="uid://dtx5tc6jgf605" path="res://backgrounds/rect_ajustesperfil.png" id="5_djet7"]
+[ext_resource type="Texture2D" uid="uid://c1rckw0nymbt8" path="res://backgrounds/rect_perfil.png" id="6_lfm7y"]
+[ext_resource type="Texture2D" uid="uid://bbxb3f5yd4c50" path="res://icons/users 1.png" id="7_8ayvb"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="8_6u24u"]
+[ext_resource type="Texture2D" uid="uid://ckf8sy1yherk0" path="res://backgrounds/Rectangle backmenu.png" id="8_g0u6j"]
+[ext_resource type="Texture2D" uid="uid://cox3ia0ti3urk" path="res://icons/boton_cerrar.png" id="10_qcih0"]
+[ext_resource type="Texture2D" uid="uid://bsctnfvclykrj" path="res://Sprites/Manita2.png" id="11_0mosb"]
+[ext_resource type="Texture2D" uid="uid://ddniyfen3ngan" path="res://Sprites/Manita1.png" id="12_md0lx"]
+
+[node name="menu_MiPerfil" type="Node"]
+script = ExtResource("1_14g00")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k1xri")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 577.0
+offset_top = 34.0
+offset_right = 857.0
+offset_bottom = 91.0
+texture = ExtResource("4_ofqta")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.117
+anchor_top = 0.566
+anchor_right = 0.207
+anchor_bottom = 0.628
+offset_left = -74.784
+offset_top = -3.76804
+offset_right = -44.464
+offset_bottom = -18.944
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_6u24u")
+theme_override_font_sizes/font_size = 15
+text = "Alex_Corzo"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.101
+anchor_right = 0.5
+anchor_bottom = 0.101
+offset_left = 25.0
+offset_top = -16.448
+offset_right = 274.0
+offset_bottom = 16.552
+theme_override_colors/font_color = Color(0.827451, 0.890196, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_m38s8")
+theme_override_font_sizes/font_size = 25
+text = "mi perfil"
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 362.0
+offset_top = 106.0
+offset_right = 1109.0
+offset_bottom = 589.0
+texture = ExtResource("5_djet7")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.534
+anchor_top = 0.607
+anchor_right = 0.534
+anchor_bottom = 0.607
+offset_left = -180.168
+offset_top = -276.336
+offset_right = 411.832
+offset_bottom = 83.664
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="editardatos" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 17.99
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("8_6u24u")
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "Editar datos de jugador"
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+
+[node name="estadisticas" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 17.99
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("8_6u24u")
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "Estadisticas"
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+
+[node name="extras" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 17.99
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("8_6u24u")
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "Extras"
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+
+[node name="logros" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("8_6u24u")
+theme_override_font_sizes/font_size = 32
+text = "Logros"
+flat = true
+
+[node name="RectPerfil" type="Sprite2D" parent="."]
+position = Vector2(179, 283)
+scale = Vector2(0.207479, 0.207479)
+texture = ExtResource("6_lfm7y")
+
+[node name="Users1" type="Sprite2D" parent="."]
+position = Vector2(179, 281)
+scale = Vector2(0.167977, 0.167977)
+texture = ExtResource("7_8ayvb")
+
+[node name="RectangleBackmenu" type="Sprite2D" parent="."]
+position = Vector2(735, 514)
+scale = Vector2(0.245192, 0.245192)
+texture = ExtResource("8_g0u6j")
+
+[node name="Button" type="Button" parent="RectangleBackmenu"]
+texture_filter = 1
+offset_left = -1141.96
+offset_top = -53.0195
+offset_right = 1101.04
+offset_bottom = 59.9805
+theme_override_colors/font_color = Color(0.121569, 0.192157, 0.329412, 1)
+theme_override_fonts/font = ExtResource("8_6u24u")
+theme_override_font_sizes/font_size = 95
+text = "Volver al menu principal"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BotonCerrar" type="Sprite2D" parent="."]
+position = Vector2(192, 421)
+scale = Vector2(3.625, 3.625)
+texture = ExtResource("10_qcih0")
+
+[node name="btn_CerrarSesión" type="Button" parent="BotonCerrar"]
+offset_left = -27.8621
+offset_top = 1.37931
+offset_right = 19.1379
+offset_bottom = 9.37931
+theme_override_font_sizes/font_size = 3
+flat = true
+
+[node name="Datos1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(409, 169)
+scale = Vector2(0.0629464, 0.0629464)
+texture = ExtResource("11_0mosb")
+
+[node name="Est1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(528, 255)
+scale = Vector2(0.064796, 0.064796)
+texture = ExtResource("11_0mosb")
+
+[node name="Log1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(613, 425)
+scale = Vector2(0.0599491, 0.059949)
+texture = ExtResource("11_0mosb")
+
+[node name="Ex1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(610, 336)
+scale = Vector2(0.065051, 0.065051)
+texture = ExtResource("11_0mosb")
+
+[node name="Dato2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1052, 171)
+scale = Vector2(0.0617089, 0.0617089)
+texture = ExtResource("12_md0lx")
+
+[node name="Est2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(921, 253)
+scale = Vector2(0.0635549, 0.0635548)
+texture = ExtResource("12_md0lx")
+
+[node name="Log2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(844, 424)
+scale = Vector2(0.0598628, 0.0598628)
+texture = ExtResource("12_md0lx")
+
+[node name="Ex2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(851, 338)
+scale = Vector2(0.0638185, 0.0638185)
+texture = ExtResource("12_md0lx")
+
+[connection signal="mouse_entered" from="VBoxContainer/editardatos" to="." method="_on_editardatos_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/editardatos" to="." method="_on_editardatos_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/estadisticas" to="." method="_on_estadisticas_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/estadisticas" to="." method="_on_estadisticas_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/extras" to="." method="_on_extras_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/extras" to="." method="_on_extras_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/logros" to="." method="_on_logros_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/logros" to="." method="_on_logros_mouse_exited"]
+[connection signal="pressed" from="RectangleBackmenu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BotonCerrar/btn_CerrarSesión" to="." method="_on_btn_cerrar_sesin_pressed"]

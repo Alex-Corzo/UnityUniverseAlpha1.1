@@ -1,0 +1,155 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2r6n6cmbqxrj"]
+
+[ext_resource type="Script" path="res://scripts_project/seleccion_personaje.gd" id="1_2vplt"]
+[ext_resource type="Texture2D" uid="uid://bdb83mb5cih7l" path="res://Entorno/imagen_seelccion.png" id="1_056tw"]
+[ext_resource type="Texture2D" uid="uid://uu4t6dwl2ske" path="res://backgrounds/rectmenuprin.png" id="2_ik7u6"]
+[ext_resource type="Texture2D" uid="uid://ds460ucaj50kq" path="res://backgrounds/rec_pause.png" id="3_lmb2b"]
+[ext_resource type="FontFile" uid="uid://6ffv7le4xvds" path="res://fonts/freecam v2.ttf" id="4_8xpo3"]
+[ext_resource type="Texture2D" uid="uid://1cemld8rxh30" path="res://icons/FOOD.png" id="5_ej576"]
+[ext_resource type="Texture2D" uid="uid://rreto5h776k3" path="res://Sprites/personaje1.png" id="7_1bxmj"]
+[ext_resource type="Texture2D" uid="uid://b72tpq3stawpu" path="res://Sprites/morra_sprite.png" id="8_c305o"]
+[ext_resource type="Texture2D" uid="uid://7ogfdtteyyct" path="res://Sprites/señor_sprite.png" id="9_5o7og"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="10_34jta"]
+[ext_resource type="Texture2D" uid="uid://cycaj6ikbk134" path="res://Sprites/check.png" id="12_2bmbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tqod"]
+bg_color = Color(0.427451, 0.737255, 0.858824, 1)
+
+[node name="Seleccion_Personaje" type="Node"]
+script = ExtResource("1_2vplt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 646.0
+texture = ExtResource("1_056tw")
+expand_mode = 1
+
+[node name="Rectmenuprin" type="Sprite2D" parent="."]
+position = Vector2(588, 364.156)
+scale = Vector2(0.300659, 0.262478)
+texture = ExtResource("2_ik7u6")
+
+[node name="RecPause" type="Sprite2D" parent="."]
+position = Vector2(580.562, 73)
+scale = Vector2(0.27187, 0.185625)
+texture = ExtResource("3_lmb2b")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 286.0
+offset_top = 56.0
+offset_right = 874.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("4_8xpo3")
+theme_override_font_sizes/font_size = 28
+text = "Seleccionar personaje"
+
+[node name="comida" type="Sprite2D" parent="."]
+position = Vector2(214, 73)
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("5_ej576")
+region_enabled = true
+region_rect = Rect2(111.728, 399.243, 35.3177, 35.0109)
+
+[node name="comida2" type="Sprite2D" parent="."]
+position = Vector2(946, 73)
+scale = Vector2(3.2079, 3.2079)
+texture = ExtResource("5_ej576")
+region_enabled = true
+region_rect = Rect2(78.863, 343.729, 24.4586, 19.5939)
+
+[node name="btn_avent" type="Button" parent="."]
+offset_left = 262.0
+offset_top = 178.0
+offset_right = 400.0
+offset_bottom = 419.0
+icon = ExtResource("7_1bxmj")
+flat = true
+expand_icon = true
+
+[node name="btn_invest" type="Button" parent="."]
+offset_left = 519.0
+offset_top = 179.0
+offset_right = 657.0
+offset_bottom = 420.0
+icon = ExtResource("8_c305o")
+flat = true
+expand_icon = true
+
+[node name="btn_profe" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 180.0
+offset_right = 908.0
+offset_bottom = 421.0
+icon = ExtResource("9_5o7og")
+flat = true
+expand_icon = true
+
+[node name="avent" type="Label" parent="."]
+offset_left = 238.0
+offset_top = 442.0
+offset_right = 422.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_34jta")
+theme_override_font_sizes/font_size = 22
+text = "Aventurero"
+
+[node name="invest" type="Label" parent="."]
+offset_left = 476.0
+offset_top = 441.0
+offset_right = 709.0
+offset_bottom = 464.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_34jta")
+theme_override_font_sizes/font_size = 22
+text = "Investigadora"
+
+[node name="avent3" type="Label" parent="."]
+offset_left = 767.0
+offset_top = 440.0
+offset_right = 915.0
+offset_bottom = 463.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_34jta")
+theme_override_font_sizes/font_size = 22
+text = "Profesor"
+
+[node name="Check1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(395, 174)
+scale = Vector2(2.875, 2.875)
+texture = ExtResource("12_2bmbi")
+
+[node name="Check2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(657, 178)
+scale = Vector2(2.875, 2.875)
+texture = ExtResource("12_2bmbi")
+
+[node name="Check3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(908, 179)
+scale = Vector2(2.875, 2.875)
+texture = ExtResource("12_2bmbi")
+
+[node name="btn_cmzPartida" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.352
+anchor_top = 0.802
+anchor_right = 0.654
+anchor_bottom = 0.863
+offset_left = 0.495972
+offset_top = 0.303955
+offset_right = -0.408081
+offset_bottom = -0.223999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_34jta")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_6tqod")
+text = "Comenzar Partida"
+
+[connection signal="pressed" from="btn_avent" to="." method="_on_btn_avent_pressed"]
+[connection signal="pressed" from="btn_invest" to="." method="_on_btn_invest_pressed"]
+[connection signal="pressed" from="btn_profe" to="." method="_on_btn_profe_pressed"]
+[connection signal="pressed" from="btn_cmzPartida" to="." method="_on_btn_cmz_partida_pressed"]

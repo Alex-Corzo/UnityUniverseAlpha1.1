@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk2le5qq8v4af"]
+
+[ext_resource type="Script" path="res://scripts_project/Ajustes.gd" id="1_deaak"]
+[ext_resource type="Texture2D" uid="uid://bkdrxomhauwi0" path="res://Entorno/58082.jpg" id="2_23im4"]
+[ext_resource type="Texture2D" uid="uid://b53xajq4mrlxa" path="res://backgrounds/Rect_Ajustes.png" id="3_oq8vy"]
+[ext_resource type="Texture2D" uid="uid://ckf8sy1yherk0" path="res://backgrounds/Rectangle backmenu.png" id="4_0kxcr"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="5_5ieh8"]
+[ext_resource type="Texture2D" uid="uid://ph4wrxfukieb" path="res://backgrounds/ajustes_icon.png" id="7_8cvwe"]
+
+[node name="Ajustes" type="Node"]
+script = ExtResource("1_deaak")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_23im4")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 155.0
+offset_right = 1004.0
+offset_bottom = 582.0
+texture = ExtResource("3_oq8vy")
+expand_mode = 1
+
+[node name="RectangleBackmenu" type="Sprite2D" parent="."]
+position = Vector2(576.397, 497.25)
+scale = Vector2(0.228365, 0.228365)
+texture = ExtResource("4_0kxcr")
+
+[node name="Volvermenu" type="Button" parent="."]
+offset_left = 303.0
+offset_top = 449.0
+offset_right = 841.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_fonts/font = ExtResource("5_5ieh8")
+theme_override_font_sizes/font_size = 23
+text = "Volver al menú principal"
+flat = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_bottom = 0.052
+offset_left = 190.0
+offset_top = 196.0
+offset_right = 905.0
+offset_bottom = 399.304
+grow_horizontal = 0
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(23, 0)
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 54
+columns = 2
+
+[node name="Volumenmusica" type="Label" parent="GridContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.211765, 0.403922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("5_5ieh8")
+theme_override_font_sizes/font_size = 23
+text = "Volumen de la música  "
+
+[node name="slidervolmusica" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+min_value = -50.0
+max_value = 0.0
+value = -15.0
+rounded = true
+
+[node name="Volumenmusica2" type="Label" parent="GridContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.137255, 0.403922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("5_5ieh8")
+theme_override_font_sizes/font_size = 23
+text = "Volumen de efectos"
+horizontal_alignment = 1
+
+[node name="slidervolefectos" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 0.0
+value = -15.0
+rounded = true
+
+[node name="Volumenmusica3" type="Label" parent="GridContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.211765, 0.403922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("5_5ieh8")
+theme_override_font_sizes/font_size = 23
+text = "Modo de pantalla"
+horizontal_alignment = 1
+
+[node name="modoventana" type="OptionButton" parent="GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_5ieh8")
+theme_override_font_sizes/font_size = 20
+item_count = 2
+selected = 0
+popup/item_0/text = "Ventana"
+popup/item_0/id = 0
+popup/item_1/text = "Pantalla completa"
+popup/item_1/id = 1
+
+[node name="AjustesIcon" type="Sprite2D" parent="."]
+position = Vector2(578, 73)
+scale = Vector2(0.263081, 0.263081)
+texture = ExtResource("7_8cvwe")
+
+[connection signal="pressed" from="Volvermenu" to="." method="_on_volvermenu_pressed"]
+[connection signal="value_changed" from="GridContainer/slidervolmusica" to="." method="_on_slidervolmusica_value_changed"]
+[connection signal="value_changed" from="GridContainer/slidervolefectos" to="." method="_on_slidervolefectos_value_changed"]
+[connection signal="item_selected" from="GridContainer/modoventana" to="." method="_on_modoventana_item_selected"]

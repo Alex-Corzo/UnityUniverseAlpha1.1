@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://inwit8meyeqs"]
+
+[ext_resource type="Script" path="res://scripts_project/Dialogo.gd" id="1_7tync"]
+[ext_resource type="Texture2D" uid="uid://bggpqcqd4r0rv" path="res://Sprites/Rect_Personalización.png" id="1_t3use"]
+[ext_resource type="Texture2D" uid="uid://btbmarw1b4j" path="res://Sprites/sprite_burger.png" id="2_3ptui"]
+[ext_resource type="Texture2D" uid="uid://bt4joebxhax2a" path="res://Sprites/Premade dialog box  big.png" id="3_3cp0m"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="4_5cpon"]
+[ext_resource type="Texture2D" uid="uid://s65uo7up5gt5" path="res://spritesheets/btn_dialog.png" id="6_3avnv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t51l"]
+bg_color = Color(0.678431, 0.564706, 0.607843, 1)
+
+[sub_resource type="Animation" id="Animation_8mu3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texto:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite_boton:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_b5mvx"]
+resource_name = "boton"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite_boton:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_l7ffk"]
+resource_name = "texto"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texto:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0biec"]
+_data = {
+"RESET": SubResource("Animation_8mu3d"),
+"boton": SubResource("Animation_b5mvx"),
+"texto": SubResource("Animation_l7ffk")
+}
+
+[node name="Dialogo" type="TextureRect"]
+offset_right = 1150.0
+offset_bottom = 652.0
+texture = ExtResource("1_t3use")
+expand_mode = 1
+script = ExtResource("1_7tync")
+
+[node name="PremadeDialogBoxBig" type="Sprite2D" parent="."]
+position = Vector2(574.563, 521.75)
+scale = Vector2(3.72656, 3.52344)
+texture = ExtResource("3_3cp0m")
+
+[node name="imagen_pers" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 422.0
+offset_right = 219.0
+offset_bottom = 608.0
+texture = ExtResource("2_3ptui")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 996.0
+offset_top = 386.0
+offset_right = 1097.0
+offset_bottom = 473.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8t51l")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Anima" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0biec")
+}
+
+[node name="texto" type="Label" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 494.0
+offset_right = 1082.0
+offset_bottom = 570.0
+theme_override_colors/font_color = Color(0.121569, 0.121569, 0.121569, 1)
+theme_override_fonts/font = ExtResource("4_5cpon")
+theme_override_font_sizes/font_size = 25
+text = "Hola"
+autowrap_mode = 3
+
+[node name="sprite_boton" type="Sprite2D" parent="."]
+position = Vector2(1089, 447)
+scale = Vector2(2.13281, 2.13281)
+texture = ExtResource("6_3avnv")
+hframes = 2
+frame = 1
+
+[connection signal="animation_finished" from="Anima" to="." method="_on_anima_animation_finished"]

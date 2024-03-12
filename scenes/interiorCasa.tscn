@@ -1,0 +1,172 @@
+[gd_scene load_steps=15 format=3 uid="uid://cjfw4e3u45vnw"]
+
+[ext_resource type="TileSet" uid="uid://vy0a25yf1p1a" path="res://Tileset_mapa/interiorCasa.tres" id="1_nte7k"]
+[ext_resource type="Script" path="res://scripts_project/interiorCasa.gd" id="1_xoti4"]
+[ext_resource type="PackedScene" uid="uid://eotxv1k3f6rr" path="res://scenes/burguer_senital.tscn" id="3_ftv6i"]
+[ext_resource type="PackedScene" uid="uid://4u1ew5kv70kx" path="res://scenes/canvas_modulate.tscn" id="4_x07tq"]
+[ext_resource type="Texture2D" uid="uid://doyvvqn7pqcmx" path="res://Sprites/pngwing.com.png" id="5_oe1k4"]
+[ext_resource type="Texture2D" uid="uid://bp6d1olerd8wt" path="res://Sprites/pixil-frame-0 (3).png" id="6_2vwk2"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="7_dsi58"]
+[ext_resource type="PackedScene" uid="uid://bnjdyitjrv1xt" path="res://scenes/pausa.tscn" id="8_n32kn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl7v2"]
+size = Vector2(11, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37b7t"]
+size = Vector2(18, 19)
+
+[sub_resource type="Animation" id="Animation_r1ut1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cursor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(501, 161)]
+}
+
+[sub_resource type="Animation" id="Animation_33ngk"]
+resource_name = "flecha_text"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cursor:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(501, 164), Vector2(501, 161)]
+}
+
+[sub_resource type="Animation" id="Animation_huk2k"]
+resource_name = "papel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hoja:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_extvv"]
+_data = {
+"RESET": SubResource("Animation_r1ut1"),
+"flecha_text": SubResource("Animation_33ngk"),
+"papel": SubResource("Animation_huk2k")
+}
+
+[node name="Casa" type="Node"]
+script = ExtResource("1_xoti4")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_nte7k")
+format = 2
+layer_0/name = "Interior"
+layer_0/tile_data = PackedInt32Array(33357855, 262146, 3, 33292319, 196610, 2, 32309279, 524290, 3, 655382, 196610, 9, 655381, 196610, 9, 720916, 196610, 9, 786452, 196610, 9, 851987, 196610, 9, 655392, 196610, 9, 655391, 196610, 9, 655390, 196610, 9, 655389, 196610, 9, 655388, 196610, 9, 655387, 196610, 9, 655386, 196610, 9, 655385, 196610, 9, 720920, 196610, 9, 720919, 196610, 9, 720918, 196610, 9, 786453, 196610, 9, 917523, 196610, 9, 917536, 196610, 9, 917535, 196610, 9, 917534, 196610, 9, 917533, 196610, 9, 983068, 196610, 9, 983067, 196610, 9, 983066, 196610, 9, 983069, 196610, 9, 851998, 196610, 9, 786462, 196610, 9, 720926, 196610, 9, 720925, 196610, 9, 720924, 196610, 9, 786459, 196610, 9, 851995, 196610, 9, 917530, 196610, 9, 917529, 196610, 9, 983064, 196610, 9, 983070, 196610, 9, 589843, 196610, 9, 655379, 196610, 9, 720915, 196610, 9, 786451, 196610, 9, 983059, 196610, 9, 589844, 196610, 9, 655380, 196610, 9, 851988, 196610, 9, 917524, 196610, 9, 983060, 196610, 9, 589845, 196610, 9, 720917, 196610, 9, 851989, 196610, 9, 917525, 196610, 9, 983061, 196610, 9, 589846, 196610, 9, 786454, 196610, 9, 851990, 196610, 9, 917526, 196610, 9, 983062, 196610, 9, 589847, 196610, 9, 655383, 196610, 9, 786455, 196610, 9, 851991, 196610, 9, 917527, 196610, 9, 983063, 196610, 9, 589848, 196610, 9, 655384, 196610, 9, 786456, 196610, 9, 851992, 196610, 9, 917528, 196610, 9, 589849, 196610, 9, 720921, 196610, 9, 786457, 196610, 9, 851993, 196610, 9, 983065, 196610, 9, 589850, 196610, 9, 720922, 196610, 9, 786458, 196610, 9, 851994, 196610, 9, 589851, 196610, 9, 720923, 196610, 9, 917531, 196610, 9, 589852, 196610, 9, 786460, 196610, 9, 851996, 196610, 9, 917532, 196610, 9, 589853, 196610, 9, 786461, 196610, 9, 851997, 196610, 9, 589854, 196610, 9, 589855, 196610, 9, 720927, 196610, 9, 786463, 196610, 9, 851999, 196610, 9, 983071, 196610, 9, 589856, 196610, 9, 786464, 196610, 9, 852000, 196610, 9, 983072, 196610, 9, 458771, 196610, 9, 524307, 196610, 9, 458772, 196610, 9, 524308, 196610, 9, 458773, 196610, 9, 524309, 196610, 9, 458775, 196610, 9, 524311, 196610, 9, 458776, 196610, 9, 524312, 196610, 9, 458777, 196610, 9, 524313, 196610, 9, 458778, 196610, 9, 524314, 196610, 9, 458779, 196610, 9, 524315, 196610, 9, 458780, 196610, 9, 524316, 196610, 9, 458781, 196610, 9, 524317, 196610, 9, 458782, 196610, 9, 524318, 196610, 9, 458783, 196610, 9, 524319, 196610, 9, 458784, 196610, 9, 524320, 196610, 9, 393241, 131074, 8, 393242, 131074, 8, 393243, 131074, 8, 393244, 131074, 8, 393245, 131074, 8, 393246, 131074, 8, 393247, 131074, 8, 393248, 131074, 8, 393235, 131074, 8, 393236, 131074, 8, 393237, 131074, 8, 393238, 131074, 8, 393239, 131074, 8, 393240, 131074, 8, 458774, 196610, 9, 524310, 196610, 9, 458770, 196610, 9, 589842, 196610, 9, 524306, 196610, 9, 655378, 196610, 9, 786450, 196610, 9, 720914, 196610, 9, 851986, 196610, 9, 917522, 196610, 9, 983058, 196610, 9, 1048594, 196610, 9, 1048595, 196610, 9, 1048596, 196610, 9, 1048597, 196610, 9, 1048598, 196610, 9, 1048599, 196610, 9, 1048600, 196610, 9, 1048601, 196610, 9, 1048602, 196610, 9, 1048603, 196610, 9, 1048604, 196610, 9, 1048605, 196610, 9, 1048606, 196610, 9, 1048607, 196610, 9, 1048608, 196610, 9, 393234, 131074, 8, 327712, 262146, 8, 327711, 262146, 8, 327710, 262146, 8, 327709, 262146, 8, 327705, 262146, 8, 327704, 262146, 8, 327703, 262146, 8, 327702, 262146, 8, 327701, 262146, 8, 327700, 262146, 8, 327699, 262146, 8, 327698, 262146, 8, 720928, 196610, 9, 327708, 262146, 8, 327707, 131074, 8, 327706, 262146, 8)
+layer_1/name = "muebles"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(458773, 393217, 8, 393237, 393217, 7, 393238, 458753, 7, 458774, 458753, 8, 458784, 393217, 11, 852000, 458754, 2, 786464, 458754, 1, 393241, 524290, 3, 458777, 196610, 2, 393236, 131073, 7, 458772, 131073, 8, 458775, 65537, 8, 393239, 65537, 7, 327712, 131072, 10, 327711, 131072, 10, 327710, 131072, 10, 327709, 131072, 10, 327708, 131072, 10, 327707, 65536, 10, 327706, 65536, 10, 327705, 65536, 10, 327704, 65536, 10, 327703, 65536, 10, 327702, 65536, 10, 327701, 65536, 10, 327700, 65536, 10, 327699, 131072, 10, 327698, 0, 10, 458776, 851971, 11, 458778, 983043, 11, 524312, 851971, 13, 524313, 917507, 10, 524314, 983043, 12, 589849, 917507, 14, 589850, 983043, 14, 589848, 851971, 14, 327713, 262144, 11, 393249, 0, 11, 458785, 0, 11, 524321, 0, 11, 589857, 0, 11, 655393, 0, 11, 720929, 0, 11, 786465, 0, 11, 852001, 0, 11, 917537, 0, 11, 983073, 0, 11, 1048609, 0, 11, 1048608, 65536, 13, 1048607, 65536, 13, 1048606, 65536, 13, 1048605, 65536, 13, 1048604, 65536, 13, 1048603, 65536, 13, 1048602, 65536, 13, 1048601, 65536, 13, 1048600, 65536, 13, 1048599, 65536, 13, 1048598, 65536, 13, 1048597, 65536, 13, 1048596, 65536, 13, 1048595, 65536, 13, 1048594, 0, 13, 393234, 0, 12, 458770, 0, 12, 524306, 0, 12, 589842, 0, 12, 655378, 0, 12, 720914, 0, 12, 786450, 0, 12, 851986, 0, 12, 917522, 0, 12, 983058, 0, 12, 917532, 458755, 64, 917533, 524291, 64, 983069, 458755, 64, 983070, 524291, 64, 720928, 393219, 56, 720927, 327683, 56, 655391, 327683, 55, 655392, 393219, 55, 786454, 786435, 31, 851990, 786435, 32, 655385, 3, 35, 720921, 3, 36, 786457, 786435, 45, 851993, 786435, 46)
+layer_2/name = "decoracion"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(458777, 262146, 3, 655391, 3, 52, 655392, 983043, 58, 589856, 983043, 57, 393244, 393219, 25, 327708, 393219, 24, 393235, 3, 73, 327699, 3, 72, 851986, 851971, 44, 917522, 851971, 45, 851987, 917507, 44, 917523, 917507, 45, 393245, 3, 41, 393246, 65539, 41, 327706, 262147, 24, 393242, 262147, 25, 327707, 327683, 24, 393243, 327683, 25, 786454, 3, 10, 851990, 3, 11, 917526, 3, 12, 786455, 65539, 10, 851991, 65539, 11, 917527, 65539, 12, 786456, 262147, 10, 851992, 262147, 11, 917528, 262147, 12, 786457, 131075, 10, 851993, 131075, 11, 917529, 131075, 12, 786458, 196611, 10, 851994, 196611, 11, 917530, 196611, 12, 327701, 3, 14, 393237, 3, 15, 327702, 65539, 14, 393238, 65539, 15, 589845, 196611, 74, 589846, 196611, 74)
+layer_3/name = "extras"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array(786455, 786435, 14, 786456, 851971, 28, 851992, 851971, 29, 786457, 917507, 28, 851993, 917507, 29, 851991, 3, 16)
+
+[node name="burger_2d" parent="." groups=["burger_2d"] instance=ExtResource("3_ftv6i")]
+position = Vector2(473, 177)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(520, 122)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_cl7v2")
+
+[node name="CanvasModulate" parent="." instance=ExtResource("4_x07tq")]
+visible = false
+
+[node name="cartaArea" type="Area2D" parent="."]
+position = Vector2(504, 171)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cartaArea"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_37b7t")
+
+[node name="cursor" type="TextureRect" parent="."]
+offset_left = 501.0
+offset_top = 161.0
+offset_right = 507.0
+offset_bottom = 165.0
+texture = ExtResource("5_oe1k4")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cursor"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_extvv")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 501.0
+offset_top = 152.0
+offset_right = 510.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_dsi58")
+theme_override_font_sizes/font_size = 8
+text = "E"
+
+[node name="hoja" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.717647, 0.717647, 0.717647, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="hoja"]
+position = Vector2(450.5, 172)
+scale = Vector2(2.10938, 1.46875)
+texture = ExtResource("6_2vwk2")
+
+[node name="Label" type="Label" parent="hoja"]
+offset_left = 410.0
+offset_top = 139.0
+offset_right = 502.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_dsi58")
+theme_override_font_sizes/font_size = 8
+text = "Para moverte 
+en interiores 
+usa las teclas 
+de movimiento
+'AWSD' o las 
+flechas"
+
+[node name="pausemenu" parent="." instance=ExtResource("8_n32kn")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="cartaArea" to="." method="_on_carta_area_body_entered"]

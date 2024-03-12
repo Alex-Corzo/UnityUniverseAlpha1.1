@@ -1,0 +1,346 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgglmvtpkskss"]
+
+[ext_resource type="Texture2D" uid="uid://dqar1q7gtsu25" path="res://Entorno/image 27.png" id="1_mixp3"]
+[ext_resource type="Script" path="res://scripts_project/MenuPrincipal.gd" id="1_w5dlh"]
+[ext_resource type="Texture2D" uid="uid://c1ulil7rq2cq4" path="res://Sprites/Hoja.png" id="2_30tx6"]
+[ext_resource type="Texture2D" uid="uid://uu4t6dwl2ske" path="res://backgrounds/rectmenuprin.png" id="4_lxni6"]
+[ext_resource type="Texture2D" uid="uid://0h6xb3da3yt6" path="res://backgrounds/titulo_menu.png" id="5_iqr45"]
+[ext_resource type="Texture2D" uid="uid://4iwe7fb1yx5l" path="res://Sprites/logo_edfunnygames.png" id="5_qdwla"]
+[ext_resource type="FontFile" uid="uid://bpbxcqcebuhsp" path="res://fonts/dogicapixel.ttf" id="6_aio5j"]
+[ext_resource type="Texture2D" uid="uid://bsctnfvclykrj" path="res://Sprites/Manita2.png" id="6_qay2b"]
+[ext_resource type="Texture2D" uid="uid://ddniyfen3ngan" path="res://Sprites/Manita1.png" id="7_tmrcq"]
+[ext_resource type="Texture2D" uid="uid://d0opue7gs88c2" path="res://backgrounds/rect_salirjuego.png" id="10_isqaj"]
+[ext_resource type="Texture2D" uid="uid://bxcnhk81slqdc" path="res://backgrounds/rect_salirtitulo.png" id="11_td3dq"]
+[ext_resource type="Texture2D" uid="uid://brkqydhqat3hk" path="res://Sprites/Instagram.png" id="12_dt3ua"]
+
+[node name="MenuPrincipal" type="Node"]
+script = ExtResource("1_w5dlh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mixp3")
+expand_mode = 1
+
+[node name="Hoja2" type="Sprite2D" parent="TextureRect"]
+position = Vector2(279.562, 496.712)
+scale = Vector2(0.336254, 0.336254)
+texture = ExtResource("2_30tx6")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 181.0
+offset_right = 837.0
+offset_bottom = 511.0
+texture = ExtResource("4_lxni6")
+expand_mode = 1
+
+[node name="Txt_Titulo" type="TextureRect" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 274.0
+offset_top = 34.0
+offset_right = 836.0
+offset_bottom = 114.0
+texture = ExtResource("5_iqr45")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_top = 0.477
+anchor_right = 0.332
+anchor_bottom = 0.723
+offset_left = 374.0
+offset_top = -118.096
+offset_right = 347.536
+offset_bottom = -1.504
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="iniciar" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 17.99
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.552941, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "Iniciar partida"
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+
+[node name="ajustes" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.552941, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 30
+text = "Ajustes"
+flat = true
+
+[node name="miPerfil" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.552941, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 30
+text = "Mi perfil"
+flat = true
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.552941, 0.690196, 1)
+theme_override_colors/font_focus_color = Color(0, 0.545098, 0.247059, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 30
+text = "Salir del juego
+"
+flat = true
+
+[node name="TextureRectSGame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 340.0
+offset_top = -125.0
+offset_right = 376.0
+offset_bottom = -72.0
+grow_vertical = 2
+texture = ExtResource("6_qay2b")
+expand_mode = 1
+
+[node name="TextureRect2SGame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+offset_left = 733.0
+offset_top = 200.0
+offset_right = 769.0
+offset_bottom = 253.0
+texture = ExtResource("7_tmrcq")
+expand_mode = 1
+
+[node name="TextureRectSettings" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 423.0
+offset_top = -57.0
+offset_right = 459.0
+offset_bottom = -4.0
+grow_vertical = 2
+texture = ExtResource("6_qay2b")
+expand_mode = 1
+
+[node name="TextureRect2Settings" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+offset_left = 643.0
+offset_top = 268.0
+offset_right = 679.0
+offset_bottom = 321.0
+texture = ExtResource("7_tmrcq")
+expand_mode = 1
+
+[node name="TextureRectMyProfile" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 409.0
+offset_top = 11.0
+offset_right = 445.0
+offset_bottom = 64.0
+grow_vertical = 2
+texture = ExtResource("6_qay2b")
+expand_mode = 1
+
+[node name="TextureRect2MyProfile" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+offset_left = 656.0
+offset_top = 337.0
+offset_right = 692.0
+offset_bottom = 390.0
+texture = ExtResource("7_tmrcq")
+expand_mode = 1
+
+[node name="TextureRectExitGame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 344.0
+offset_top = 78.0
+offset_right = 380.0
+offset_bottom = 131.0
+grow_vertical = 2
+texture = ExtResource("6_qay2b")
+expand_mode = 1
+
+[node name="TextureRect2ExitGame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0.153, 0.663)
+offset_left = 727.0
+offset_top = 404.0
+offset_right = 763.0
+offset_bottom = 457.0
+texture = ExtResource("7_tmrcq")
+expand_mode = 1
+
+[node name="Hoja" type="Sprite2D" parent="."]
+position = Vector2(912.094, 498.98)
+scale = Vector2(0.324031, 0.32403)
+texture = ExtResource("2_30tx6")
+
+[node name="Hoja3" type="Sprite2D" parent="."]
+position = Vector2(1111, 509)
+scale = Vector2(0.17643, 0.176429)
+texture = ExtResource("2_30tx6")
+
+[node name="Hoja2" type="Sprite2D" parent="."]
+position = Vector2(57, 512)
+scale = Vector2(0.25369, 0.25369)
+texture = ExtResource("2_30tx6")
+
+[node name="LogoEdfunnygames" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1023, 406)
+scale = Vector2(0.170107, 0.170107)
+texture = ExtResource("5_qdwla")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0.105882, 0.0941176, 1)
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = -252.0
+offset_right = 217.0
+offset_bottom = -204.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 23
+text = "Alpha 0.1
+"
+
+[node name="confirm_salir" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 833.0
+offset_top = 330.0
+offset_right = 1056.0
+offset_bottom = 456.0
+texture = ExtResource("10_isqaj")
+expand_mode = 1
+
+[node name="RectSalirtitulo" type="Sprite2D" parent="confirm_salir"]
+position = Vector2(111, 16.75)
+scale = Vector2(0.191675, 0.148026)
+texture = ExtResource("11_td3dq")
+
+[node name="salir" type="Label" parent="confirm_salir"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 222.0
+offset_bottom = 29.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 15
+text = "¿Salir del juego?"
+
+[node name="btnSalir" type="Button" parent="confirm_salir"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 41.0
+offset_right = 133.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.552941, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 28
+text = "Si"
+flat = true
+
+[node name="btnNoSalir" type="Button" parent="confirm_salir"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 70.0
+offset_top = 75.0
+offset_right = 148.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.0705882, 0.552941, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_aio5j")
+theme_override_font_sizes/font_size = 27
+text = "No
+"
+flat = true
+
+[node name="mano_salir" type="Sprite2D" parent="confirm_salir"]
+position = Vector2(-40, 103)
+scale = Vector2(0.0548469, 0.0548469)
+texture = ExtResource("6_qay2b")
+
+[node name="manosalirconfirm" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(900, 387)
+scale = Vector2(0.0334183, 0.0334183)
+texture = ExtResource("6_qay2b")
+
+[node name="ManosalirNo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(901, 425)
+scale = Vector2(0.0334183, 0.0334183)
+texture = ExtResource("6_qay2b")
+
+[node name="insta" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 70.0
+icon = ExtResource("12_dt3ua")
+flat = true
+expand_icon = true
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="mouse_entered" from="VBoxContainer/iniciar" to="." method="_on_iniciar_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/iniciar" to="." method="_on_iniciar_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/iniciar" to="." method="_on_iniciarpartida_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ajustes" to="." method="_on_ajustes_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ajustes" to="." method="_on_ajustes_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/ajustes" to="." method="_on_ajustes_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/miPerfil" to="." method="_on_mi_perfil_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/miPerfil" to="." method="_on_mi_perfil_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/miPerfil" to="." method="_on_mi_perfil_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Salir" to="." method="_on_salir_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Salir" to="." method="_on_salir_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="mouse_entered" from="confirm_salir/btnSalir" to="." method="_on_btn_salir_mouse_entered"]
+[connection signal="mouse_exited" from="confirm_salir/btnSalir" to="." method="_on_btn_salir_mouse_exited"]
+[connection signal="pressed" from="confirm_salir/btnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="mouse_entered" from="confirm_salir/btnNoSalir" to="." method="_on_btn_no_salir_mouse_entered"]
+[connection signal="mouse_exited" from="confirm_salir/btnNoSalir" to="." method="_on_btn_no_salir_mouse_exited"]
+[connection signal="pressed" from="insta" to="." method="_on_button_pressed"]

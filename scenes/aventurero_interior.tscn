@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://di7knn7cxhhk2"]
+
+[ext_resource type="Texture2D" uid="uid://q34q5yvg706q" path="res://spritesheets/advent_int.png" id="1_4cdyu"]
+
+[sub_resource type="GDScript" id="GDScript_5120y"]
+script/source = "extends CharacterBody2D
+@onready var anim_advent = $Anim_advent_int
+
+const SPEED = 130
+
+func _physics_process(delta):
+
+	# Handle Movement.
+	var direction = Vector2.ZERO
+
+	if Input.is_action_pressed(\"ui_right\") or Input.is_action_pressed(\"derecha\"):
+		direction.x += 1
+	elif Input.is_action_pressed(\"ui_left\") or Input.is_action_pressed(\"izquierda\"):
+		direction.x -= 1
+
+	if Input.is_action_pressed(\"ui_down\") or Input.is_action_pressed(\"abajo\"):
+		direction.y += 1
+	elif Input.is_action_pressed(\"ui_up\") or Input.is_action_pressed(\"arriba\"):
+		direction.y -= 1
+
+	# Normalize the direction vector to avoid diagonal movement being faster.
+	direction = direction.normalized()
+
+	# Move the character based on the direction and speed.
+	velocity = direction * SPEED
+	
+	if direction.y == +1:
+		anim_advent.play(\"down_int_advent\")
+	elif direction.x == +1:
+		anim_advent.play(\"int_right_advent\")
+	elif direction.x == -1:
+		anim_advent.play(\"Int_left_advent\")
+	elif direction.y == -1:
+		anim_advent.play(\"up_int_advent\")
+	else: 
+		anim_advent.play(\"RESET\")
+		
+	move_and_slide()
+
+
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t170"]
+size = Vector2(12, 17)
+
+[sub_resource type="Animation" id="Animation_vn5y7"]
+resource_name = "Int_left_advent"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_xpds5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_p35nx"]
+resource_name = "down_int_advent"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_w10xx"]
+resource_name = "int_right_advent"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_jidn0"]
+resource_name = "up_int_advent"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u054k"]
+_data = {
+"Int_left_advent": SubResource("Animation_vn5y7"),
+"RESET": SubResource("Animation_xpds5"),
+"down_int_advent": SubResource("Animation_p35nx"),
+"int_right_advent": SubResource("Animation_w10xx"),
+"up_int_advent": SubResource("Animation_jidn0")
+}
+
+[node name="Aventurero_Interior" type="CharacterBody2D"]
+position = Vector2(7, 6)
+script = SubResource("GDScript_5120y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19, 12.5)
+shape = SubResource("RectangleShape2D_5t170")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(20, 11)
+texture = ExtResource("1_4cdyu")
+hframes = 16
+frame = 9
+
+[node name="Anim_advent_int" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u054k")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)

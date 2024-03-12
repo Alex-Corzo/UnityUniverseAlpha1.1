@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbxc1bn0ykc3"]
+
+[ext_resource type="Texture2D" uid="uid://dii14tbklttdj" path="res://spritesheets/enemigos/planta/Idle (44x42).png" id="1_8ccth"]
+[ext_resource type="Script" path="res://scripts_project/enemigo_planta.gd" id="1_66ctc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lwia"]
+size = Vector2(28, 36)
+
+[sub_resource type="Animation" id="Animation_3432d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_poas1"]
+resource_name = "idle_planta"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1uit7"]
+_data = {
+"RESET": SubResource("Animation_3432d"),
+"idle_planta": SubResource("Animation_poas1")
+}
+
+[node name="enemigo_planta" type="CharacterBody2D"]
+position = Vector2(357, 267)
+script = ExtResource("1_66ctc")
+
+[node name="colision_planta" type="CollisionShape2D" parent="."]
+position = Vector2(195, 68)
+shape = SubResource("RectangleShape2D_5lwia")
+
+[node name="planta" type="Sprite2D" parent="."]
+position = Vector2(192, 64)
+texture = ExtResource("1_8ccth")
+hframes = 11
+frame = 5
+
+[node name="anim_planta" type="AnimationPlayer" parent="planta"]
+libraries = {
+"": SubResource("AnimationLibrary_1uit7")
+}
